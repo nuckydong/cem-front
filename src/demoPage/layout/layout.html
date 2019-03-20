@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>layout</title>
+  <style>
+    body, html {
+      padding: 0;
+      margin: 0;
+      height:100%;
+    }
+  </style>
+</head>
+<body>
+
+
+<div id="app" style="height: 100%">
+  <div style="position: absolute;background: #ccc;z-index:999 ">
+  <router-link to="/">layout</router-link>
+  <router-link to="/tabsFit">tabsFit</router-link>
+  <router-link to="/fixedTop">fixedTop</router-link>
+  </div>
+  <!--路由显示区域-->
+  <router-view></router-view>
+
+</div>
+
+</body>
+
+</html>

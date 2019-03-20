@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>工作台</title>
+  <style>
+    #mask_con { display: none; }
+    #mask_income { display: none; }
+    ul { list-style-type: none; }
+  </style>
+</head>
+<body>
+<!--消息提示框-->
+<div class="ant-messages">
+  <div class="ant-message-notice">
+    <div class="ant-messages-notice-div">
+      <span class="ant-message-notice-content">
+        <i id="icon"></i><!-- 图标 -->
+        <span class="show-message"></span>
+      </span>
+    </div>
+  </div>
+</div>
+<div id="drop_factory">
+  <ul class="auto_con">
+    <li class="add_new_con" id="add_con">
+      <span class="icon-wenben iconfont"></span>
+    </li>
+    <li class="save_new_con" id="save_con">
+      <span class="icon-baocun iconfont"></span>
+    </li>
+    <li class="smalladd" id="smalladdid">
+        <span class="icon-jia iconfont"></span>
+    </li>
+    <li class="smallfangkuai" id="smallfangkuaiid">
+      <span class="icon-weibiaoti-- iconfont"></span>
+    </li>
+    <li class="backli" id="backliid">
+      <span class="icon-fanhui1 iconfont"></span>
+    </li>
+  </ul>
+  <div id="xuanze"></div>
+</div>
+<!--弹出层-->
+<div id="mask_con">
+  <div class="mask_content">
+    <div class="mask_content_head">
+      添加面板
+      <ul class="btn-box">
+        <li class="btn-close icon-close iconfont"></li>
+      </ul>
+    </div>
+    <div id="all">
+      <div class="checkboxall">
+        <div class="kuangall"></div>
+        <span>全选</span>
+      </div>
+    </div>
+    <div class="mask_content_con">
+      <ul id="panel_ul">
+      </ul>
+    </div>
+    <div id="determine">确定</div>
+    <div class="mask_content_bottom"></div>
+  </div>
+</div>
+<!--控制角色选择的弹出层-->
+<div id="mask_income">
+  <div class="mask_content">
+    <div class="mask_content_head">
+      请选择角色模板或者角色模板组合
+      <ul class="btn-box">
+        <li class="btn-income-close icon-close iconfont"></li>
+      </ul>
+    </div>
+    <div class="mask_content_con">
+      <ul id="panel_role"></ul>
+    </div>
+    <div class="mask_content_bottom"></div>
+  </div>
+</div>
+</body>
+
+</html>
