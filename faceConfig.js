@@ -2,11 +2,11 @@
 const faceConfig = () => {
   return {
     // 基础路径,打包发布的时候修改为后端发布服务地址
-    'basePath': 'http://114.116.152.220:8081/git',
+    'basePath': 'http://localhost:8081/cem',
     // 开发模式mockServer服务地址
     'mockServer': 'http://192.168.17.18:10000/mock/5b68f9b10b81e375f173f0ed',
     // 开发模式后端服务地址
-    'devServer': 'http://localhost:8081/git',
+    'devServer': 'http://localhost:8081/cem',
     // 项目文件打包寻址地址
     'docModule': ['corePage/*', 'demoPage/*'],
     'coreModules': [
@@ -23,7 +23,8 @@ const faceConfig = () => {
     'projectModules': [
       'demoModules/projectModuleOne',
       'demoModules/projectModuleTwo',
-      'demoModules/demoTest'
+      'demoModules/demoTest',
+      'cem/demo'
     ],
     // 首页数据配置
     'indexPageConfig': {

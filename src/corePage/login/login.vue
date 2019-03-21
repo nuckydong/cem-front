@@ -2,16 +2,16 @@
   <div class="body">
     <header>
       <div class="logo">
-        <img v-if="false" src="./img/logo.png" alt="log">
+        <img v-if="false" src="../img/logo.png" alt="log">
       </div>
     </header>
 
-    <img v-if="false" src="./img/taimg.png" style="height:60%;margin-left: 10%"/>
+    <img v-if="false" src="../img/taimg.png" style="height:60%;margin-left: 10%"/>
     <article>
       <div class="login-con">
         <div class="header">
-          系统登录
-          <span>SYSTEM LOGINING</span>
+          用户登录
+          <span>USER LOGINING</span>
         </div>
         <login-form @modifyPasswordPaneCtr="modifyPasswordPaneCtr"></login-form>
       </div>
@@ -30,7 +30,9 @@
 
     </article>
     <footer >
-      <span>金民工程一期统一应用开发框架</span>
+      <span>Copyright © www.yinhai.com, All Rights Reserved.</span>
+      <br>
+      <span>版权所有：四川久远银海软件股份有限公司</span>
     </footer>
   </div>
 
