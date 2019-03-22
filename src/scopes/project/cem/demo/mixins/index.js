@@ -14,7 +14,7 @@ const mixins = {
   data(){
     return {
       formItemLayouts,
-      extendSettings:extendUserSetting,
+      extendSettings:[],
       formSettings:[],
     }
   },
@@ -38,47 +38,6 @@ const mixins = {
     getFormNecessarySettings(initData){
       return [
         {
-          id: 'avatar',
-          formId: '',
-          formItem: {
-            type: 'slot',
-            collection: null
-          },
-          label: '用户头像',
-          class:'avatar-form-item',
-          display: true,
-          exist: true,
-          formItemLayout: formItemLayouts.default
-        },
-        {
-          id: 'orgId',
-          formId: 'orgId',
-          formItem: {
-            type: 'slot',
-            collection: null
-          },
-          label: '所属组织',
-          decoratorOptions:{
-            rules: [{ required: true, message: '请选择人员的所属组织' }]
-          },
-          display: true,
-          exist: this.editType == '1',
-          formItemLayout: formItemLayouts.default
-        },
-        {
-          id: 'orgIdShow',
-          formId: '',
-          formItem: {
-            type: 'slot',
-            collection: null
-          },
-          label: '所属组织',
-          decoratorOptions:{},
-          display: true,
-          exist: this.editType == '2',
-          formItemLayout: formItemLayouts.default
-        },
-        {
           id: 'name',
           formId: 'name',
           formItem: {
@@ -94,55 +53,18 @@ const mixins = {
           formItemLayout: formItemLayouts.default
         },
         {
-          id: 'loginId',
-          formId: 'loginId',
+          id: 'gender',
+          formId: 'gender',
           formItem: {
             type: 'input',
             collection: null
           },
-          label: '账号',
+          label: '性别',
           decoratorOptions:{
-            rules: [{ required: true, message: '请输入人员登录帐号' }], initialValue: initData.loginId
+            rules: [{ required: true, message: '请输入性别' }], initialValue: initData.gender
           },
           display: true,
           exist: true,
-          disabled: this.editType == '2',
-          formItemLayout: formItemLayouts.default
-        },
-        {
-          id: 'password',
-          formId: 'password',
-          formItem: {
-            type: 'slot',
-            collection: null
-          },
-          label: '登陆口令',
-          decoratorOptions:{
-            rules: [{
-              required: true, message: '请输入登录口令'
-            } ,{
-              min: 6, message: '登录口令不能少于6位字符'
-            },{
-              validator: this.validatePwd
-            }]
-          },
-          display: true,
-          exist: this.editType == '1',
-          formItemLayout: formItemLayouts.default
-        },
-        {
-          id: 'password_2',
-          formId: 'password_2',
-          formItem: {
-            type: 'slot',
-            collection: null
-          },
-          label: '确认口令',
-          decoratorOptions:{
-            rules: [{ validator: this.compareToFirstPwd},{ required: true, message: '请再次输入登录口令' }]
-          },
-          display: true,
-          exist: this.editType == '1',
           formItemLayout: formItemLayouts.default
         }
       ]
@@ -169,9 +91,7 @@ const mixins = {
           decoratorOptions:{},
           isMore: setting.more === '1'
         }
-
         //todo protectPrivacy
-
         //rule 解析
         let rules = []
         if(setting.required === '1'){
@@ -203,7 +123,7 @@ const mixins = {
 
 
       return this.getFormNecessarySettings(initData).concat(propSettings)
-    },
+    }
   }
 }
 

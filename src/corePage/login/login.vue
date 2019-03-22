@@ -2,11 +2,11 @@
   <div class="body">
     <header>
       <div class="logo">
-        <img v-if="false" src="../img/logo.png" alt="log">
+        <img v-if="true" src="./img/logo.png" alt="log">
       </div>
     </header>
 
-    <img v-if="false" src="../img/taimg.png" style="height:60%;margin-left: 10%"/>
+    <img v-if="true" src="./img/taimg.png" style="height:60%;margin-left: 10%"/>
     <article>
       <div class="login-con">
         <div class="header">
@@ -29,13 +29,12 @@
       </ta-modal>
 
     </article>
-    <footer >
+    <footer>
       <span>Copyright © www.yinhai.com, All Rights Reserved.</span>
-      <br>
+      
       <span>版权所有：四川久远银海软件股份有限公司</span>
     </footer>
   </div>
-
 </template>
 
 <script>

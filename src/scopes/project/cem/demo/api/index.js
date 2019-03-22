@@ -20,15 +20,16 @@ export default {
     });
   },
   /*新增*/
-  addUser(_source, data, callBack) {
+  insert(_source, data, callBack) {
     let submitParameter = {
-      url: BASE_URL + "addUser",
+      url: "/demo/insert",
       data: data
     };
     _source.Base.submit(_source, submitParameter, {
       successCallback: (data) => {
         if (data.errors === null) {
           callBack(data);
+          
         } else {
           for (let i = 0; i < data.errors.length; i++) {
             _source.$message.error(data.errors[i].msg);
@@ -38,9 +39,9 @@ export default {
     });
   },
   /*编辑*/
-  updateUserByUserId(_source, data, callBack) {
+  update(_source, data, callBack) {
     let submitParameter = {
-      url: BASE_URL + "updateUserByUserId",
+      url: "/demo/updateById",
       data: data
     };
     _source.Base.submit(_source, submitParameter, {

@@ -87,6 +87,7 @@ export default {
         var conL = this.Tool.getWidth(this.$refs.menuHorizon)
         var itemLen = this.$refs.menuItem.length
         var spIndex = itemLen
+     
         for (let i = 0; i < this.$refs.menuItem.length; i++) {
           itemsL += this.Tool.getWidth(this.$refs.menuItem[i])
           if (conL <= itemsL) {

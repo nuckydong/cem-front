@@ -25,8 +25,6 @@
       <div>
         <ta-table rowKey="id" :columns="columns" :dataSource="userList" :pagination=false :locale="{filterConfirm: '确定',filterReset: '重置',emptyText: '暂无数据'}" :rowSelection="{selectedRowKeys: selectedRowKeys, onSelect: fnOnSelect, onSelectAll : fnOnSelectAll}">
           <a slot="name" slot-scope="text,record" class="operate" @click="showVisible = true; rowData = record" :class="{'disable-color': record.effective == '0' }">{{text}}</a>
-          <span slot="sex" slot-scope="text">{{CollectionLabel('SEX', text)}}</span>
-
           <template slot="operation" slot-scope="text, record, index">
             <a @click="editVisible = true; editType = '2'; rowData = record; editIndex = index" class="operate">编辑</a>
             <ta-divider type="vertical"/>
@@ -35,12 +33,13 @@
               <a class="operate">删除</a>
             </ta-popconfirm>
           </template>
+
         </ta-table>
         <ta-pagination style="float: right; margin-top: 10px;" showSizeChanger showQuickJumper :dataSource.sync="userList" :defaultPageSize="10" :params="userPageParams" :url="userSearchUrl" ref="gridPager" />
       </div>
     </ta-border-layout>
     <!--编辑、新增框-->
-    <edit-user :visible="editVisible" @close="editVisible = false" :editType="editType" :rowData="rowData" @editSuccess="editSuccess" @queryTable="onSearchUser"></edit-user>
+    <editUser :visible="editVisible" @close="editVisible = false" :editType="editType" :rowData="rowData" @editSuccess="editSuccess" @queryTable="onSearchUser"></editUser>
     <!--人员信息展示-->
     <showUser :visible="showVisible" @close="showVisible = false" :rowData="rowData"></showUser>
     <!--批量删除-->
@@ -138,7 +137,7 @@
           selectedRows.push(record);
         } else {
           this.selectedRowKeys = selectedRowKeys.filter(id => id != record.id)
-          this.selectedRows = selectedRows.filter(id => item.id != record.id)
+          this.selectedRows = selectedRows.filter(item => item.id != record.id)
         }
       },
       fnOnSelectAll: function (selected, selectedRows) {
