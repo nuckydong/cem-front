@@ -1,5 +1,5 @@
 <template>
-  <ta-drawer :title="editType == '1'? '添加人员信息':'编辑人员信息'" placement="left" :closable="true" @close="closeEdit" :visible="visible" destroyOnClose width="500px">
+  <ta-drawer :title="editType == '1'? '添加人员信息':'编辑人员信息'" placement="right" :closable="true" @close="closeEdit" :visible="visible" destroyOnClose width="500px">
     <ta-form id="userForm" :autoFormCreate="(form)=>{this.form = form}">
       <template v-if="form">
         <template v-for="formSetting in formNormalSettings">

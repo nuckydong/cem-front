@@ -26,6 +26,7 @@
       deleteOrgBatch: function () {
         this.deleteForm.validateFields((err, values) => {
           if (!err) {
+            console.log(this.deleteUserIds);
             $api.deleteBatchUserByUserIds(this, {"userIds": this.deleteUserIds}, (data) => {
               this.$message.success('删除成功');
               this.$emit('queryTable')

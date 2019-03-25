@@ -28,9 +28,9 @@
           <template slot="operation" slot-scope="text, record, index">
             <a @click="editVisible = true; editType = '2'; rowData = record; editIndex = index" class="operate">编辑</a>
             <ta-divider type="vertical"/>
-            <ta-popconfirm v-if="userList.length" title="确认删除该用户?" cancelText="取消" okText="确认" okType="default" @confirm="onDeleteUser(record.userId)">
+            <ta-popconfirm v-if="userList.length" title="确认删除该用户?" cancelText="取消" okText="确认" okType="default" @confirm="onDeleteUser(record.id)">
               <ta-icon slot="icon" type="question-circle-o" style="color: red"/>
-              <a class="operate">删除</a>
+              <a class="operate" style="color: red">删除</a>
             </ta-popconfirm>
           </template>
 
@@ -159,10 +159,10 @@
         this.deleteVisible = true;
       },
       //删除操作
-      onDeleteUser(userId) {
+      onDeleteUser(id) {
         /*const dataSource = [...this.userList];
         this.userList = dataSource.filter((item) => item.userId != userId)*/
-        $api.deleteBatchUserByUserIds(this, {"userIds": userId}, (data) => {
+        $api.deleteBatchUserByUserIds(this, {"userIds": id}, (data) => {
           this.$message.success('删除操作成功');
           this.onSearchUser();
         });
